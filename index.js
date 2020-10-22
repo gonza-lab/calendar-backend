@@ -20,6 +20,7 @@ server.use(express.json());
 
 // Rutas
 server.use('/api/auth', require('./routes/auth'));
+server.use('/api/events', require('./routes/events'));
 
 server.listen(process.env.PORT, () => {
   console.log(`Servidor Online. Puerto: ${process.env.PORT}`);
