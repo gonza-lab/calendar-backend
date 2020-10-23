@@ -7,6 +7,7 @@ const {
 } = require('../controllers/events');
 
 const { jwtValidator } = require('../middlewares/jwt-validator');
+const { userValidator } = require('../middlewares/user-validator');
 const { createEventValidators } = require('../validators/events-validators');
 
 const router = Router();
@@ -21,8 +22,8 @@ router.get('/', getEvents);
 
 router.post('/', createEventValidators, createEvent);
 
-router.put('/:id', updateEvent);
+router.put('/:id', [createEventValidators, userValidator], updateEvent);
 
-router.delete('/:id', deleteEvent);
+router.delete('/:id', userValidator, deleteEvent);
 
 module.exports = router;
