@@ -80,6 +80,8 @@ const renewToken = async (req, res) => {
     ok: true,
     msg: 'Renew',
     token,
+    uid,
+    name,
   });
 };
 
