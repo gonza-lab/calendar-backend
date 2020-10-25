@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const cors = require('cors');
 const {
   getEvents,
   createEvent,
@@ -17,6 +18,12 @@ const router = Router();
 */
 
 router.use(jwtValidator);
+router.use(
+  cors({
+    origin: 'https://mern-calendar-g0nza.herokuapp.com',
+    optionsSuccessStatus: 200,
+  })
+);
 
 router.get('/', getEvents);
 

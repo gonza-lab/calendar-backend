@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const cors = require('cors');
 const { check } = require('express-validator');
 
 const { createUser, renewToken, loginUser } = require('../controllers/auth');
@@ -11,6 +12,13 @@ const router = Router();
 /*
   ${host}/api/auth
 */
+
+router.use(
+  cors({
+    origin: 'https://mern-calendar-g0nza.herokuapp.com',
+    optionsSuccessStatus: 200,
+  })
+);
 
 router.post(
   '/register',
