@@ -35,7 +35,7 @@ const deleteEvent = async (req = request, res = response) => {
   try {
     await Evento.findByIdAndDelete(req.params.id);
 
-    res.status(400).json({
+    res.status(200).json({
       ok: true,
     });
   } catch (error) {
