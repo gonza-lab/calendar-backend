@@ -12,7 +12,7 @@ dbConnection();
 // CORS
 server.use(
   cors({
-    origin: 'https://gonza-lab.github.io',
+    origin: 'https://calendar-app-g0nza.herokuapp.com',
   })
 );
 
