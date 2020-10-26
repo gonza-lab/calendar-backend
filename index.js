@@ -10,10 +10,11 @@ const server = express();
 dbConnection();
 
 // CORS
-server.use(cors());
-
-// Directorio publico
-server.use(express.static('public'));
+server.use(
+  cors({
+    origin: 'https://gonza-lab.github.io',
+  })
+);
 
 // Lectura y parseo del body
 server.use(express.json());

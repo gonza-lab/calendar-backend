@@ -13,13 +13,6 @@ const router = Router();
   ${host}/api/auth
 */
 
-router.use(
-  cors({
-    origin: 'https://gonza-lab.github.io',
-    optionsSuccessStatus: 200,
-  })
-);
-
 router.post(
   '/register',
   [

@@ -18,12 +18,6 @@ const router = Router();
 */
 
 router.use(jwtValidator);
-router.use(
-  cors({
-    origin: 'https://gonza-lab.github.io',
-    optionsSuccessStatus: 200,
-  })
-);
 
 router.get('/', getEvents);
 
